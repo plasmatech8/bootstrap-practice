@@ -4,5 +4,18 @@ See https://www.linkedin.com/learning/bootstrap-4-essential-training
 
 ## Getting Started
 
+Install options:
+* Download the precompiled CSS and JS
+* Use bootstrap CDN link (browser grabs from CDN and stores in browser)
+* Download source files (original source files, SASS, JS, etc)
 
+The `css` and `js` folder contains:
+* Normal versions
+* Minified versions
+* Grid only versions
+* Maps for link to the original SASS
+* Bundle version (also includes popper.js library)
+
+
+We will likely only need **bootstrap.min.css** and **bootstrap.min.js**.
 

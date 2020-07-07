@@ -2,9 +2,11 @@
 
 See https://www.linkedin.com/learning/bootstrap-4-essential-training
 
-## 01. Site
+- [Bootstrap 4 Essential Training](#bootstrap-4-essential-training)
+  - [01. Getting Started](#01-getting-started)
+  - [02. Using Basic Styles](#02-using-basic-styles)
 
-### Getting Started
+## 01. Getting Started
 
 Install options:
 * Download the precompiled CSS and JS
@@ -29,3 +31,4 @@ We will need:
 In `index.html`, the `.container` class is a bootstrap class that allows
 everything to fit to the default grid.
 
+## 02. Using Basic Styles

@@ -11,6 +11,13 @@ See https://www.linkedin.com/learning/bootstrap-4-essential-training
     - [Using Colors with bootstrap](#using-colors-with-bootstrap)
     - [Work with images](#work-with-images)
     - [CSS variables](#css-variables)
+  - [03. Mastering Layout with Bootstrap](#03-mastering-layout-with-bootstrap)
+    - [Containers](#containers)
+    - [Rows and Columns](#rows-and-columns)
+    - [Usage Notes](#usage-notes)
+    - [Offset columns](#offset-columns)
+    - [Nested columns, Custom order](#nested-columns-custom-order)
+    - [Grid alignment options](#grid-alignment-options)
 
 ## 01. Getting Started
 
@@ -169,4 +176,105 @@ Note that if we try to override `--danger`, it will not work because it is hard
 coded into the bootstrap CSS and has the `!important` keyword (overrides all).
 
 Think of CSS variables just as shortcuts.
+
+## 03. Mastering Layout with Bootstrap
+
+### Containers
+
+The grid is a responsive 12-column system.
+
+Uses Flexbox.
+
+Need to know classes: `container`, `row`, `column`
+
+Grid Containers:
+* `container(-SIZ)`
+  * SIZ: sm, md, lg, xl, fluid
+  * Each size will cause the conainer to snap to a maximium size, or 100% page width
+  * Containers include 15px padding (30px gutter between contrainers)
+
+### Rows and Columns
+
+Rows:
+* `row`
+* `row-cols(-BP)(-COL)`
+  * BP: sm, md, lg, xl
+  * COL: 1-6
+* `no-gutters`
+  * Removes grid spacing
+
+Columns:
+* `col(-BP)(-COL)`
+  * BP: sm, md, lg, xl
+  * COL: 1-12
+  * `column`s must be inside of a `row`
+  * Columns will attempt to wrap to the next line when there is not enough space
+
+Aligning columns:
+* Vertical: `align-TYP-DIR`
+  * TYP: items, self
+  * DIR: start, center, end
+* Horizontal: `justify-content-DIR`
+  * DIR: start, center, end, around, between
+
+### Usage Notes
+
+We can make a grid that starts with 4 columns, and snaps to 2 columns when
+there is not enough space: `class="row row-cols-2 row-cols-lg-4"` (at the large
+break-point, take up a 4 break-points of width). This is better than having the
+second row items being stretched.
+
+You can make some cells take more space by setting `class="column-6"` (6/12 of
+the available vertical grid spaces).
+
+If we set three columns to a width of BP=3 (totalling 9 BP), we will have 3
+BP of empty space to the right. We can centre the grid using
+`class="row justify-content-center"`
+
+`vh-100`: set vertical height to 100%
+
+`bg-secondary`: set colour to secondary **can help to see cells**
+
+`img-thumbnail`: create frame around image **can help to see img**
+
+We can either use `class="row row-cols-2"` to create equal columns of 2, or we
+can set all columns to use `class="col-6"` to give custom spacing. We can also
+specify the BPs for each col so that the sizing is only applied at certain
+container widths.
+
+### Offset columns
+
+Just shifts a column over. Can be used to add empty space on either side of the
+cells. For alignment, it is better to use alignment/flexbox utilities.
+
+`offset-BP-COL`
+* BP: sm, md, lg, xl
+* COL: 1-11
+
+### Nested columns, Custom order
+
+We can put grids inside of grids by putting another set of row/col tags inside
+of a grid tag.
+
+We can customize order using class: `order(-BP)-ORD`. We can also use flexbox
+classes: `d-flex` and `flex-column`.
+
+### Grid alignment options
+
+Vertical:
+* `align-items-ALN`
+  * ALN: start, center, end
+
+Individual/horizontal alignment:
+* `align-self-ALN`
+  * ALN: start, center, end (top, center, bottom)
+  * **Use to add vertical positioning of cells in a row**
+
+Horizontal alignment:
+* `justify-content-ALN`
+  * ALN: start, center, end, around, between
+  * Column width needs to be specified
+  * **Use to add horizontal spacing between cells in a row**
+
+We can use these to ensure that taller cells are aligned with each other.
 
